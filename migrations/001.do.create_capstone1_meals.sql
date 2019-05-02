@@ -1,7 +1,7 @@
 CREATE TABLE capstone1_meals (
   id SERIAL PRIMARY KEY,
   image TEXT,
-  title TEXT NOT NULL,
-  content TEXT,
+  meal_name TEXT NOT NULL,
+  ingredients TEXT,
   date_created TIMESTAMP DEFAULT now() NOT NULL
 );
