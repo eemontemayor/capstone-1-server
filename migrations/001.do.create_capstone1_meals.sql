@@ -3,9 +3,9 @@ CREATE TABLE capstone1_meals (
   image TEXT,
   meal_name TEXT NOT NULL,
   ingredients TEXT,
-  date_created TIMESTAMP DEFAULT now() NOT NULL
-  --on_day TIMESTAMP
-
+  date_created TIMESTAMP DEFAULT now() NOT NULL,
+  on_day DATE,
+  bookmarked BOOLEAN
 );
 
 --CREATE TABLE capstone1_calendar (
