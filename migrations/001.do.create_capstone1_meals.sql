@@ -4,4 +4,10 @@ CREATE TABLE capstone1_meals (
   meal_name TEXT NOT NULL,
   ingredients TEXT,
   date_created TIMESTAMP DEFAULT now() NOT NULL
+  --on_day TIMESTAMP
+
 );
+
+--CREATE TABLE capstone1_calendar (
+
+--)
