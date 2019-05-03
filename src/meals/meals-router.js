@@ -3,23 +3,30 @@ const mealsRouter= express.Router()
 const jsonBodyParser= express.json()
 const mealService = require('./meals-service')
 
+const serializeMeal= meal =>({
+    meal_name: meal.meal_name,
+    ingredients: meal.ingredients,
+    on_day: meal.on_day
+})
 
 mealsRouter
 .post('/', jsonBodyParser, (req,res,next)=>{
-    console.log('++++++++++++++++++++')
+   
     const newMeal = req.body;
     // if validated then
     mealService.insertMeal(
         req.app.get('db'),
         newMeal
     )
-    .then(meal => console.log(meal))
+    .then(meal => console.log(meal)) // TO-DO fix responses
 })
 .get('/', (req,res, next)=>{
-    console.log('@@@@@@@@@@@@@@@@@@@@')
+    
     mealService.getMeals(
         req.app.get('db')
     )
-    .then(meal => console.log(meal))
+    .then(meals => {
+        return res.json(meals.map(serializeMeal))
+    })// TO-DO fix responses
 })
 module.exports = mealsRouter

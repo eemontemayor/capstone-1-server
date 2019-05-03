@@ -8,7 +8,7 @@ const mealService = {
     .then(([meal])=> console.log(meal))
     },
     getMeals(db){
-        return db.select('*').from('capstone1_meals').then(meal => console.log(meal));
+        return db.select('*').from('capstone1_meals');
     }
 }
 module.exports = mealService
