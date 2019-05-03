@@ -15,4 +15,11 @@ mealsRouter
     )
     .then(meal => console.log(meal))
 })
+.get('/', (req,res, next)=>{
+    console.log('@@@@@@@@@@@@@@@@@@@@')
+    mealService.getMeals(
+        req.app.get('db')
+    )
+    .then(meal => console.log(meal))
+})
 module.exports = mealsRouter
