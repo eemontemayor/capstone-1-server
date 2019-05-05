@@ -17,7 +17,7 @@ mealsRouter
         newMeal
     )
     .then(meal => {
-        res.status(201).json(mealService.serializeMeal(meal))
+      return res.status(201).json(mealService.serializeMeal(meal))
     }) // TO-DO fix responses
 })
 
