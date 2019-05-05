@@ -17,7 +17,7 @@ mealsRouter
         newMeal
     )
     .then(meal => {
-        res.status(201)
+        res.status(201).json(mealService.serializeMeal(meal))
     }) // TO-DO fix responses
 })
 
@@ -27,7 +27,8 @@ mealsRouter
         req.app.get('db')
     )
     .then(meals => {
-        return res.json(meals.map(mealService.serializeMeal))
+        return res.json(meals.map(i => mealService.serializeMeal(i)))
     })// TO-DO fix responses
+    .catch(next);
 })
 module.exports = mealsRouter
