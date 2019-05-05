@@ -7,7 +7,7 @@ CREATE TABLE capstone1_users (
   date_created TIMESTAMP NOT NULL DEFAULT now(),
   date_modified TIMESTAMP
 );
---- RUN MIGRATE AGAIN AND DELETE 002
+
 CREATE TABLE capstone1_meals (
   id SERIAL PRIMARY KEY,
   image TEXT,
