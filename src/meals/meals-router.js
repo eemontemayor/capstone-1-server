@@ -16,19 +16,25 @@ mealsRouter
         req.app.get('db'),
         newMeal
     )
-    .then(meal => {
+    .then(meal => { 
+        console.log(meal)
+       
       return res.status(201).json(mealService.serializeMeal(meal))
+     
     }) // TO-DO fix responses
+    .catch(next);
 })
 
 .get('/', (req,res, next)=>{
-    
+  
     mealService.getMeals(
         req.app.get('db')
     )
-    .then(meals => {
+    .then((meals) => {
+        console.log(meals)
+        console.log('^^^^^^')
         return res.json(meals.map(i => mealService.serializeMeal(i))).status(201)
-    })// TO-DO fix responses
+    })
     .catch(next);
 })
 module.exports = mealsRouter

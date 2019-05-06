@@ -12,10 +12,10 @@ const mealService = {
 
     getMeals(db){
         return db.select('*').from('capstone1_meals');
-        },
+        }, // TO-DO select only meals from user
 
     serializeMeal(meal){
-        console.log(meal)
+        console.log(meal.meal_name)
         return {
             meal_name: meal.meal_name,
             ingredients: meal.ingredients,
