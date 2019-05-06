@@ -27,7 +27,7 @@ mealsRouter
         req.app.get('db')
     )
     .then(meals => {
-        return res.json(meals.map(i => mealService.serializeMeal(i)))
+        return res.json(meals.map(i => mealService.serializeMeal(i))).status(201)
     })// TO-DO fix responses
     .catch(next);
 })
