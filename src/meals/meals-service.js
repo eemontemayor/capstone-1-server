@@ -15,7 +15,8 @@ const mealService = {
         }, // TO-DO select only meals from user
 
     serializeMeal(meal){
-        console.log(meal.meal_name)
+        console.log(meal)
+        console.log('^^^from post at serialize^^^^^')
         return {
             meal_name: meal.meal_name,
             ingredients: meal.ingredients,
