@@ -14,6 +14,14 @@ const mealService = {
         return db.select('*').from('capstone1_meals');
         }, // TO-DO select only meals from user
 
+
+    deleteMeal(db, mealId){
+        console.log('&&&&&&&&&&&&&')
+        return db('capstone1_meals')
+        .where('id', mealId)
+        .delete()
+
+    } ,   
     serializeMeal(meal){
         console.log(meal)
         console.log('^^^from post at serialize^^^^^')

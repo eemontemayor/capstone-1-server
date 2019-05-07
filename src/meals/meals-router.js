@@ -35,4 +35,13 @@ mealsRouter
     })
     .catch(next);
 })
+.delete('/', (req,res,next)=>{
+    let mealId = req.body
+    // mealService.deleteMeal(
+    //     req.app.get('db'),
+    //     mealId
+    // )
+    console.log('%%%%%%%%%%%%%%%%%%%%%%%')
+    console.log(req.body)
+})
 module.exports = mealsRouter
