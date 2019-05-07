@@ -23,24 +23,26 @@ mealsRouter
     .catch(next);
 })
 
-.get('/', (req,res, next)=>{
-  
+.get('/', requireAuth, (req,res, next)=>{
+    console.log('################')
+    const user_id = req.user.id
+    console.log(user_id)
     mealService.getMeals(
-        req.app.get('db')
+        req.app.get('db'),
+        user_id
     )
     .then((meals) => {
-        console.log(meals)
-        console.log('~~~~~~~~')
+   
         return res.json(meals.map(i => mealService.serializeMeal(i))).status(201)
     })
     .catch(next);
 })
 .delete('/', (req,res,next)=>{
     let mealId = req.body
-    // mealService.deleteMeal(
-    //     req.app.get('db'),
-    //     mealId
-    // )
+    mealService.deleteMeal(
+        req.app.get('db'),
+        mealId
+    )
     console.log('%%%%%%%%%%%%%%%%%%%%%%%')
     console.log(req.body)
 })
