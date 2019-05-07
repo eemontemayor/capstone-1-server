@@ -12,16 +12,23 @@ const mealService = {
 
     getMeals(db, user_id){
         return db.select('*').from('capstone1_meals').where({user_id});
-        }, // TO-DO select only meals from user
+        }, 
 
 
-    deleteMeal(db, mealId){
-        console.log('&&&&&&&&&&&&&')
+
+
+
+    deleteMeal(db, id){
+        
+        console.log(id)
         return db('capstone1_meals')
-        .where('id', mealId)
-        .delete()
+        .where({id})
+        .delete() 
+    },   
 
-    } ,   
+
+
+
     serializeMeal(meal){
        
         return {

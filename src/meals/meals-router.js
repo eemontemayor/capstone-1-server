@@ -23,7 +23,7 @@ mealsRouter
     .catch(next);
 })
 
-.get('/', requireAuth, (req,res, next)=>{ // TO-DO fix promise created by require Auth which is logging out warning
+.get('/', requireAuth, jsonBodyParser,(req,res, next)=>{ // TO-DO fix promise created by require Auth which is logging out warning
   
     const user_id = req.user.id
    
@@ -37,12 +37,20 @@ mealsRouter
     })
     .catch(next);
 })
-.delete('/', (req,res,next)=>{
-    let mealId = req.body
+.delete('/', jsonBodyParser,(req,res,next)=>{
+    let id = req.body.id
+    console.log(id)
     mealService.deleteMeal(
         req.app.get('db'),
-        mealId
+        id
     )
+    .then(meal =>{
+        console.log(meal)
+        console.log('###########')
+        res.status(204).end()
+    })
+    .catch(next)
+    
   
 })
 module.exports = mealsRouter
