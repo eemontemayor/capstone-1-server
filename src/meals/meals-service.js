@@ -25,6 +25,7 @@ const mealService = {
     serializeMeal(meal){
        
         return {
+            id: meal.id,
             meal_name: meal.meal_name,
             ingredients: meal.ingredients,
             on_day: meal.on_day,

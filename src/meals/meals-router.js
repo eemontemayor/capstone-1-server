@@ -23,10 +23,10 @@ mealsRouter
     .catch(next);
 })
 
-.get('/', requireAuth, (req,res, next)=>{
-    console.log('################')
+.get('/', requireAuth, (req,res, next)=>{ // TO-DO fix promise created by require Auth which is logging out warning
+  
     const user_id = req.user.id
-    console.log(user_id)
+   
     mealService.getMeals(
         req.app.get('db'),
         user_id
@@ -43,7 +43,6 @@ mealsRouter
         req.app.get('db'),
         mealId
     )
-    console.log('%%%%%%%%%%%%%%%%%%%%%%%')
-    console.log(req.body)
+  
 })
 module.exports = mealsRouter
