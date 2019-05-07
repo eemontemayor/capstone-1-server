@@ -10,12 +10,12 @@ CREATE TABLE capstone1_users (
 
 CREATE TABLE capstone1_meals (
   id SERIAL PRIMARY KEY,
-  on_day DATE, 
   meal_name TEXT NOT NULL,
+  on_day DATE, 
   ingredients TEXT,
-  bookmarked BOOLEAN
-  image TEXT,
   date_created TIMESTAMP DEFAULT now() NOT NULL,
+  image TEXT,
+  bookmarked BOOLEAN
 );
 
 
