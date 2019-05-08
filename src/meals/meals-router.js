@@ -21,7 +21,7 @@ mealsRouter
     .then(meal =>{
         console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
         console.log(meal)
-        return res.json(meal).status(204)
+        return res.json({message: meal})
     })
     .catch(next);
 })

@@ -10,6 +10,8 @@ const mealService = {
         })
         },
 
+
+        
     getMeals(db, user_id){
         return db.select('*').from('capstone1_meals').where({user_id});
         }, 
