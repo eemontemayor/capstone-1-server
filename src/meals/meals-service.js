@@ -30,7 +30,6 @@ const mealService = {
 
 
     serializeMeal(meal){
-       
         return {
             id: meal.id,
             meal_name: meal.meal_name,
