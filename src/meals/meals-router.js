@@ -20,8 +20,8 @@ mealsRouter
     }) 
     .then(meal =>{
         console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-        console.log(meal)
-        return res.json({data:[meal]})
+        console.log(meal.id)    // HOW DO I SEND THIS ID BACK TO FRONT END????????????
+        return res.status(201).json(meal)              // .location(`/meals/${meal.id}`)
     })
     .catch(next);
 })
@@ -35,7 +35,7 @@ mealsRouter
         user_id
     )
     .then((meals) => {
-        return res.json(meals.map(i => mealService.serializeMeal(i))).status(201)
+        return res.json(meals.map(i => mealService.serializeMeal(i)))
     })
     .catch(next);
 })
