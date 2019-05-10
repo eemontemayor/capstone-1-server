@@ -7,16 +7,7 @@
     coming soon...
     
 
-### screenshots
-<div align='center'>
-    <img src="./appPics/calendar.png" width="400px"/> 
-</div>
-<div align='center'>
-    <img src="./appPics/browseMeals.png" width="400px"/> 
-</div>
-<div align='center'>
-    <img src="./appPics/addMeal.png" width="400px"/> 
-</div>
+
 
 
 ### summary
