@@ -1,26 +1,32 @@
-# Express Boilerplate!
+## THE MEAL DEAL
 
-This is a boilerplate project used for starting new projects!
+### link 
+    https://eemontemayor-meal-planner-app.now.sh/
 
-## Set up
+## API documentation
+    coming soon...
+    
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+### screenshots
+<div align='center'>
+    <img src="./appPics/calendar.png" width="400px"/> 
+</div>
+<div align='center'>
+    <img src="./appPics/browseMeals.png" width="400px"/> 
+</div>
+<div align='center'>
+    <img src="./appPics/addMeal.png" width="400px"/> 
+</div>
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
 
-## Scripts
+### summary
+    This is a meal planner app.
+    The user can browse/search for meals on the 'edamam' website 
+        and bookmark those meals for later.
+    The user can open up their calendar and click on a day.
+    After clicking on a day, the user can either add their own 
+        meals to that day or browse meals from 'edamam' and add the
+             meal to that particular day.
 
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+### technologies
+    This app utilizes HTML, CSS, React, Node, Express, and PostgreSQL
