@@ -19,8 +19,7 @@ mealsRouter
         return mealService.serializeMeal(meal[0])
     }) 
     .then(meal =>{
-        console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-        console.log(meal.id)    // HOW DO I SEND THIS ID BACK TO FRONT END????????????
+          // HOW DO I SEND THIS ID BACK TO FRONT END????????????
         return res.status(201).json(meal)              // .location(`/meals/${meal.id}`)
     })
     .catch(next);

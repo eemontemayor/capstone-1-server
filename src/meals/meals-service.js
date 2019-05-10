@@ -22,7 +22,7 @@ const mealService = {
 
     deleteMeal(db, id){
         
-        console.log(id)
+        
         return db('capstone1_meals')
         .where({id})
         .delete() 
