@@ -8,7 +8,7 @@ function makeUsersArray() {
       user_name: 'test-user-1',
       full_name: 'Test user 1',
       nickname: 'TU1',
-      password: 'password',
+      password: '$2a$12$zQv6kAQ.HRVDR4XchlEnnOS3.j1JStw9DExKVeSpsTbI8OLX6Va5q',
       date_created: '2029-01-22T16:28:32.615Z',
     },
     {
@@ -16,23 +16,7 @@ function makeUsersArray() {
       user_name: 'test-user-2',
       full_name: 'Test user 2',
       nickname: 'TU2',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 3,
-      user_name: 'test-user-3',
-      full_name: 'Test user 3',
-      nickname: 'TU3',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 4,
-      user_name: 'test-user-4',
-      full_name: 'Test user 4',
-      nickname: 'TU4',
-      password: 'password',
+      password: '$2a$12$zQv6kAQ.HRVDR4XchlEnnOS3.j1JStw9DExKVeSpsTbI8OLX6Va5q',
       date_created: '2029-01-22T16:28:32.615Z',
     },
   ]
@@ -43,34 +27,42 @@ function makeMealsArray(users) {
     {
       id: 1,
       meal_name: 'First test Meal!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
+      on_day: '2029-01-22T06:00:00.000Z',
       ingredients: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
+      image: 'http://placehold.it/500x500',
+      date_created:'2028-01-21T06:00:00.000Z',
+      bookmarked: false,
+      user_id: users[0].id,
     },
     {
       id: 2,
       meal_name: 'Second test Meal!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[1].id,
-      date_created: '2029-01-22T16:28:32.615Z',
+      on_day: '2029-01-21T06:00:00.000Z',
       ingredients: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
+      image: 'http://placehold.it/500x500',
+      date_created:'2028-01-21T06:00:00.000Z',
+      bookmarked: false,
+      user_id: users[0].id,
     },
     {
       id: 3,
       meal_name: 'Third test Meal!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
+      on_day: '2029-01-24T06:00:00.000Z',
       ingredients: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
+      image: 'http://placehold.it/500x500',
+      date_created:'2028-01-21T06:00:00.000Z',
+      bookmarked: false,
+      user_id: users[0].id,
     },
     {
       id: 4,
       meal_name: 'Fourth test Meal!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[3].id,
-      date_created: '2029-01-22T16:28:32.615Z',
+      on_day: '2029-01-23T06:00:00.000Z',
       ingredients: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
+      image: 'http://placehold.it/500x500',
+      date_created:'2028-01-21T06:00:00.000Z',
+      bookmarked: false,
+      user_id: users[0].id,
     },
   ]
 }
@@ -124,7 +116,24 @@ function seedMealsTables(db, users, Meals) {
 //     )
 // }
 
+function makeExpectedMeal(users, meal) {
+    const user = users
+      .find(user => user.id === meal.user_id)
+  
 
+  
+
+    return {
+      id: meal.id,
+      meal_name: meal.meal_name,
+      on_day: meal.on_day,
+      ingredients: meal.ingredients,
+      image: meal.image,
+      date_created:meal.date_created,
+      bookmarked:meal.bookmarked,
+      user_id: meal.user_id,
+    }
+  }
 
 
 function makeAuthHeader(user, secret = process.env.JWT_SECRET){
@@ -138,7 +147,7 @@ function makeAuthHeader(user, secret = process.env.JWT_SECRET){
 module.exports = {
   makeUsersArray,
   makeMealsArray,
-
+  makeExpectedMeal,
 
   makeMealsFixtures,
   cleanTables,

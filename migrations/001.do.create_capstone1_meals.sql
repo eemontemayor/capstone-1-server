@@ -13,8 +13,8 @@ CREATE TABLE capstone1_meals (
   meal_name TEXT NOT NULL,
   on_day DATE, 
   ingredients TEXT,
-  date_created TIMESTAMP DEFAULT now() NOT NULL,
   image TEXT,
+  date_created TIMESTAMP DEFAULT now() NOT NULL,
   bookmarked BOOLEAN
 );
 
