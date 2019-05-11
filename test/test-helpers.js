@@ -87,8 +87,7 @@ function cleanTables(db) {
   return db.raw(
     `TRUNCATE
       capstone1_meals,
-      capstone1_users,
-      RESTART IDENTITY CASCADE`
+      capstone1_users`
   )
 }
 
@@ -109,7 +108,7 @@ function seedUsers(db, users) {
 
 function seedMealsTables(db, users, Meals) {
   return seedUsers(db,users)
-    .then(()=> db.into('capstone1_Meals').insert(Meals))
+    .then(()=> db.into('capstone1_meals').insert(Meals))
   
 }
 // function seedMealsTables(db, users, Meals, reviews=[]) {
@@ -139,15 +138,12 @@ function makeAuthHeader(user, secret = process.env.JWT_SECRET){
 module.exports = {
   makeUsersArray,
   makeMealsArray,
-  makeExpectedMeal,
-  makeExpectedMealReviews,
-  makeMaliciousMeal,
-  makeReviewsArray,
+
 
   makeMealsFixtures,
   cleanTables,
   seedMealsTables,
-  seedMaliciousMeal,
+ 
   makeAuthHeader,
   seedUsers,
 }
