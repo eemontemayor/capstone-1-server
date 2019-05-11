@@ -45,7 +45,7 @@ describe('App', () => {
   })
 })
 
-  describe('GET /api/meals', () => {
+  describe.skip('GET /api/meals', () => {
     context('Given there are meals in the database', () => {
       it('responds with 200 and all of the meals', () => {
         const expectedMeals = testMeals.map(meal =>
@@ -61,6 +61,8 @@ describe('App', () => {
       });
     });
   });
+
+  
    
 
 
