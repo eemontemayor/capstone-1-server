@@ -21,3 +21,4 @@
 
 ### technologies
     This app utilizes HTML, CSS, React, Node, Express, and PostgreSQL
+    
